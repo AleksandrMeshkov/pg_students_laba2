@@ -1,0 +1,46 @@
+﻿<Window x:Class="laba2_db.crud.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:laba2_db.crud"
+        mc:Ignorable="d"
+                Title="Добавление студента" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Фамилия:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="SurnameTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Имя:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="NameTextBox" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Отчество:" Grid.Row="2" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="PatronymicTextBox" Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+        <Label Content="Дата рождения:" Grid.Row="3" Grid.Column="0" Margin="5"/>
+        <TextBox x:Name="BirthdateTextBox" Grid.Row="3" Grid.Column="1" Margin="5"
+                 Text="{Binding Birthdate, StringFormat={}{0:dd.MM.yyyy}}"/>
+
+        
+
+        <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="SaveButton" Content="Сохранить" Width="100" Margin="5" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButton" Content="Отмена" Width="100" Margin="5" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
